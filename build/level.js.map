@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/level.ts"],"names":[],"mappings":";;AAAA,IAAY,KAKX;AALD,WAAY,KAAK;IACb,iCAAI,CAAA;IACJ,iCAAI,CAAA;IACJ,iCAAI,CAAA;IACJ,mCAAK,CAAA;AACT,CAAC,EALW,KAAK,GAAL,aAAK,KAAL,aAAK,QAKhB","file":"level.js","sourcesContent":["export enum Level {\n    DATA,\n    INFO,\n    WARN,\n    ERROR\n}\n"]}
