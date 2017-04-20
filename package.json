@@ -1,8 +1,8 @@
 {
   "name": "typescript-logger",
-  "version": "1.0.0",
+  "version": "1.0.0beta",
   "description": "A simple named logger for typescript",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +20,15 @@
   "bugs": {
     "url": "https://github.com/ArturoRis/typescript-logger/issues"
   },
-  "homepage": "https://github.com/ArturoRis/typescript-logger#readme"
+  "homepage": "https://github.com/ArturoRis/typescript-logger#readme",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-typescript": "^3.1.6",
+    "gulp-util": "^3.0.8",
+    "run-sequence": "^1.2.2",
+    "typescript": "^2.2.2"
+  }
 }
