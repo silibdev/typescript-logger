@@ -6,4 +6,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Created by fabio on 20/04/17.
  */
-__export(require("./src/index"));
+__export(require("./build/index"));
