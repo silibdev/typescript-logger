@@ -1,6 +1,6 @@
 {
   "name": "typescript-logger",
-  "version": "1.0.3-beta",
+  "version": "1.0.4",
   "description": "A simple named logger for typescript",
   "main": "index.js",
   "scripts": {
