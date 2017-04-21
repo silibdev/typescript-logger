@@ -8,7 +8,7 @@ Use the command `npm install` to install all the dependecies.
 Then use the command `gulp build` in order to create the build.
 
 ### Usage
-```
+```javascript
 var log = Log.create(console, 'Demo Component');
 log.i('test info');
 log.d('test data');
