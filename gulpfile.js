@@ -2,8 +2,7 @@
  * typescript-logger Gulpfile
  */
 
-var fs = require('fs'),
-    gulp = require('gulp'),
+var gulp = require('gulp'),
     del = require('del'),
     runSequence = require('run-sequence'),
     plugins = require('gulp-load-plugins')({lazy: true}),
@@ -14,8 +13,7 @@ var fs = require('fs'),
  * Paths
  */
 var paths = {
-    build: "build",
-    tmp: "tmp"
+    build: "build"
 };
 
 /*
@@ -48,7 +46,8 @@ gulp.task('tsc:index', function () {
             target: "es5",
             suppressImplicitAnyIndexErrors: true,
             noImplicitAny: true,
-            sourceMap: true
+            sourceMap: true,
+            declaration: true
         }))
         .pipe(gulp.dest('./'));
 });
