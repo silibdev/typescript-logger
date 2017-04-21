@@ -4,23 +4,16 @@
 
 var fs = require('fs'),
     gulp = require('gulp'),
-    path = require('path'),
     del = require('del'),
     runSequence = require('run-sequence'),
     plugins = require('gulp-load-plugins')({lazy: true}),
     tsProject = plugins.typescript.createProject('tsconfig.json');
+    tsIndex = require('gulp-typescript');
 
 /*
  * Paths
  */
 var paths = {
-     assets: {
-         src: [
-            'src/**/*.html',
-            'src/**/*.js',
-            'src/**/*.json'
-        ]
-    },
     build: "build",
     tmp: "tmp"
 };
@@ -37,35 +30,30 @@ var dest = paths.build;
 gulp.task('build', function (done) {
     // run sequence tasks
     runSequence(
-        'logs',
         'clean',
-        'tsc',
+        'tsc:index',
+        'tsc:src',
         done
     );
 });
 
-/* ------------------------------------------------------------------------------------------------------------------ */
-
-// logs
-gulp.task('logs', function(done) {
-    plugins.util.log(plugins.util.colors.white('BUILDING'), ':', plugins.util.colors.green('typescript-logger'));
-    done();
-});
-
-gulp.task('clean:build', function () {
+gulp.task('clean', function () {
     del.sync(paths.build);
 });
 
-gulp.task('clean:tmp', function () {
-    del.sync(paths.tmp);
+gulp.task('tsc:index', function () {
+    return gulp.src('index.ts')
+        .pipe(tsIndex({
+            module: "commonjs",
+            target: "es5",
+            suppressImplicitAnyIndexErrors: true,
+            noImplicitAny: true,
+            sourceMap: true
+        }))
+        .pipe(gulp.dest('./'));
 });
 
-gulp.task('clean', function (done) {
-    runSequence('clean:tmp','clean:build',done);
-});
-
-// typescript
-gulp.task('tsc', function () {
+gulp.task('tsc:src', function () {
     return gulp.src('src/**/*.ts')
         .pipe(plugins.sourcemaps.init())
         .pipe(tsProject())

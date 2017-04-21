@@ -2,7 +2,7 @@
   "name": "typescript-logger",
   "version": "1.0.0beta",
   "description": "A simple named logger for typescript",
-  "main": "build/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
