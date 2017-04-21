@@ -6,15 +6,22 @@ var gulp = require('gulp'),
     del = require('del'),
     runSequence = require('run-sequence'),
     plugins = require('gulp-load-plugins')({lazy: true}),
-    tsProject = plugins.typescript.createProject('tsconfig.json');
-    tsIndex = require('gulp-typescript');
+    tsProject = plugins.typescript.createProject('tsconfig.json'),
+    ts = require('gulp-typescript'),
+    webserver = require('gulp-webserver'),
+    browserify = require("browserify"),
+    source = require('vinyl-source-stream'),
+    tsify = require("tsify");
 
 /*
  * Paths
  */
 var paths = {
-    build: "build",
-    index: "./"
+    demo: 'demo',
+    demoIndex: './demo/src/index.html',
+    demoScripts: './demo/scripts',
+    index: "./",
+    build: "build"
 };
 
 /*
@@ -31,6 +38,14 @@ gulp.task('build', function (done) {
         'tsc',
         done
     );
+});
+
+gulp.task('demo', function (done) {
+    runSequence(
+        'tsc:demo',
+        'serve:demo',
+        done
+    )
 });
 
 gulp.task('clean', function (done) {
@@ -60,7 +75,7 @@ gulp.task('clean:build', function () {
 
 gulp.task('tsc:index', function () {
     return gulp.src(paths.index + '/index.ts')
-        .pipe(tsIndex({
+        .pipe(ts({
             module: "commonjs",
             target: "es5",
             suppressImplicitAnyIndexErrors: true,
@@ -68,7 +83,7 @@ gulp.task('tsc:index', function () {
             sourceMap: true,
             declaration: true
         }))
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest(paths.index));
 });
 
 gulp.task('tsc:src', function () {
@@ -77,4 +92,28 @@ gulp.task('tsc:src', function () {
         .pipe(tsProject())
         .pipe(plugins.sourcemaps.write('/'))
         .pipe(gulp.dest(dest));
+});
+
+gulp.task('tsc:demo', function () {
+    return browserify({
+        basedir: './src',
+        debug: true,
+        entries: ['index.ts'],
+        cache: {},
+        packageCache: {},
+        standalone: 'Bundle'
+    })
+        .plugin(tsify)
+        .bundle()
+        .pipe(source('Logger.js'))
+        .pipe(gulp.dest(paths.demoScripts));
+});
+
+gulp.task('serve:demo', function () {
+    return gulp.src(paths.demo)
+        .pipe(webserver({
+            port: 8888,
+            open: true,
+            fallback: 'index.html'
+        }))
 });
