@@ -1,6 +1,7 @@
 export enum Level {
-    DATA,
     INFO,
+    LOG,
+    DEBUG,
     WARN,
     ERROR
 }

@@ -12,19 +12,23 @@ export class Logger<T> {
                 private _console: any) {
     }
 
-    d(name: string, ...data: any[]) {
-        return this._logMessage(name, Level.DATA, data);
+    debug(name: string, ...data: any[]) {
+        return this._logMessage(name, Level.DEBUG, data);
     }
 
-    er(name: string, ...data: any[]) {
+    log(name: string, ...data: any[]) {
+        return this._logMessage(name, Level.LOG, data);
+    }
+
+    error(name: string, ...data: any[]) {
         return this._logMessage(name, Level.ERROR, data);
     }
 
-    i(name: string, ...data: any[]) {
+    info(name: string, ...data: any[]) {
         return this._logMessage(name, Level.INFO, data);
     }
 
-    w(name: string, ...data: any[]) {
+    warn(name: string, ...data: any[]) {
         return this._logMessage(name, Level.WARN, data);
     }
 

@@ -10,10 +10,11 @@ Then use the command `gulp build` in order to create the build.
 ### Usage
 ```javascript
 var log = Log.create(console, 'Demo Component');
-log.i('test info');
-log.d('test data');
-log.w('test warning');
-log.er('test error');
+log.info('test info');
+log.log('test log');
+log.debug('test debug');
+log.warn('test warning');
+log.error('test error');
 ```
 
 ### Demo

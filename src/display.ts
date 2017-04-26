@@ -4,7 +4,6 @@ import {contain} from "./include";
 
 export class Display {
 
-
     static msg(message: string,
                params: any[],
                moduleName: string,
@@ -34,6 +33,23 @@ export class Display {
         params.unshift(a3);
         params.unshift(a2);
         params.unshift(a1);
-        _console.log.apply(_console, params);
+        // _console.log.apply(_console, params);
+        switch (level) {
+            case Level.INFO:
+                _console.info.apply(_console, params);
+                break;
+            case Level.DEBUG:
+                _console.debug.apply(_console, params);
+                break;
+            case Level.LOG:
+                _console.log.apply(_console, params);
+                break;
+            case Level.WARN:
+                _console.warn.apply(_console, params);
+                break;
+            case Level.ERROR:
+                _console.error.apply(_console, params);
+                break;
+        }
     }
 }
