@@ -7,10 +7,11 @@ export declare class Logger<T> {
     fixedWidth: number;
     private _console;
     constructor(name: string, color: string, allowed: Level[], isMuted: boolean, fixedWidth: number, _console: any);
-    d(name: string, ...data: any[]): this;
-    er(name: string, ...data: any[]): this;
-    i(name: string, ...data: any[]): this;
-    w(name: string, ...data: any[]): this;
+    debug(name: string, ...data: any[]): this;
+    log(name: string, ...data: any[]): this;
+    error(name: string, ...data: any[]): this;
+    info(name: string, ...data: any[]): this;
+    warn(name: string, ...data: any[]): this;
     private _logMessage(name, level, ...data);
     private _level;
     private level(l);

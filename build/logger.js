@@ -14,28 +14,35 @@ var Logger = (function () {
         //possibile livello personalizzato ?
         this._level = undefined;
     }
-    Logger.prototype.d = function (name) {
+    Logger.prototype.debug = function (name) {
         var data = [];
         for (var _i = 1; _i < arguments.length; _i++) {
             data[_i - 1] = arguments[_i];
         }
-        return this._logMessage(name, level_1.Level.DATA, data);
+        return this._logMessage(name, level_1.Level.DEBUG, data);
     };
-    Logger.prototype.er = function (name) {
+    Logger.prototype.log = function (name) {
+        var data = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            data[_i - 1] = arguments[_i];
+        }
+        return this._logMessage(name, level_1.Level.LOG, data);
+    };
+    Logger.prototype.error = function (name) {
         var data = [];
         for (var _i = 1; _i < arguments.length; _i++) {
             data[_i - 1] = arguments[_i];
         }
         return this._logMessage(name, level_1.Level.ERROR, data);
     };
-    Logger.prototype.i = function (name) {
+    Logger.prototype.info = function (name) {
         var data = [];
         for (var _i = 1; _i < arguments.length; _i++) {
             data[_i - 1] = arguments[_i];
         }
         return this._logMessage(name, level_1.Level.INFO, data);
     };
-    Logger.prototype.w = function (name) {
+    Logger.prototype.warn = function (name) {
         var data = [];
         for (var _i = 1; _i < arguments.length; _i++) {
             data[_i - 1] = arguments[_i];

@@ -1,6 +1,7 @@
 export declare enum Level {
-    DATA = 0,
-    INFO = 1,
-    WARN = 2,
-    ERROR = 3,
+    INFO = 0,
+    LOG = 1,
+    DEBUG = 2,
+    WARN = 3,
+    ERROR = 4,
 }

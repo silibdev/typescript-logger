@@ -32,7 +32,24 @@ var Display = (function () {
         params.unshift(a3);
         params.unshift(a2);
         params.unshift(a1);
-        _console.log.apply(_console, params);
+        // _console.log.apply(_console, params);
+        switch (level) {
+            case level_1.Level.INFO:
+                _console.info.apply(_console, params);
+                break;
+            case level_1.Level.DEBUG:
+                _console.debug.apply(_console, params);
+                break;
+            case level_1.Level.LOG:
+                _console.log.apply(_console, params);
+                break;
+            case level_1.Level.WARN:
+                _console.warn.apply(_console, params);
+                break;
+            case level_1.Level.ERROR:
+                _console.error.apply(_console, params);
+                break;
+        }
     };
     return Display;
 }());
