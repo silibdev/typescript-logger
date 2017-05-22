@@ -9,8 +9,7 @@ export class Display {
                moduleName: string,
                moduleColor: string,
                level: Level,
-               moduleWidth: number,
-               _console: any) {
+               moduleWidth: number) {
         if (Log.isProductionMode()) return;
         if (Log.getAllowedLevels().length !== 0 && !contain(Log.getAllowedLevels(), level)) return;
         let color = 'gray';
@@ -36,19 +35,19 @@ export class Display {
         // _console.log.apply(_console, params);
         switch (level) {
             case Level.INFO:
-                _console.info.apply(_console, params);
+                console.info.apply(console, params);
                 break;
             case Level.DEBUG:
-                _console.debug.apply(_console, params);
+                console.debug.apply(console, params);
                 break;
             case Level.LOG:
-                _console.log.apply(_console, params);
+                console.log.apply(console, params);
                 break;
             case Level.WARN:
-                _console.warn.apply(_console, params);
+                console.warn.apply(console, params);
                 break;
             case Level.ERROR:
-                _console.error.apply(_console, params);
+                console.error.apply(console, params);
                 break;
         }
     }

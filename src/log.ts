@@ -7,7 +7,7 @@ export class Log {
 
     private static instances = {};
 
-    static create<TA>(_console:any, name: string, ...level: Level[]): Logger<TA> {
+    static create<TA>(name: string, ...level: Level[]): Logger<TA> {
         let i: Logger<TA>;
         if (Log.instances[name] === undefined) {
             i = new Logger<TA>(
@@ -15,8 +15,7 @@ export class Log {
                 Log.getRandomColor(),
                 level,
                 Log.isMutedModule(name),
-                Log.levels.length > 0 ? Log.fixedWidth : undefined,
-                _console
+                Log.levels.length > 0 ? Log.fixedWidth : undefined
             );
             Log.instances[name] = i;
         } else {

@@ -8,8 +8,7 @@ export class Logger<T> {
                 public color: string,
                 private allowed: Level[],
                 private isMuted: boolean,
-                public fixedWidth: number,
-                private _console: any) {
+                public fixedWidth: number) {
     }
 
     debug(name: string, ...data: any[]) {
@@ -39,7 +38,7 @@ export class Logger<T> {
             && !contain(this.allowed, level)) return this;
 
         if (this.allowed.length === 0 || contain(this.allowed, level)) {
-            Display.msg(name, data, this.name, this.color, level, this.fixedWidth, this._console);
+            Display.msg(name, data, this.name, this.color, level, this.fixedWidth);
         }
         return this;
     }
