@@ -5,14 +5,14 @@ var include_1 = require("./include");
 var Log = (function () {
     function Log() {
     }
-    Log.create = function (_console, name) {
+    Log.create = function (name) {
         var level = [];
-        for (var _i = 2; _i < arguments.length; _i++) {
-            level[_i - 2] = arguments[_i];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            level[_i - 1] = arguments[_i];
         }
         var i;
         if (Log.instances[name] === undefined) {
-            i = new logger_1.Logger(name, Log.getRandomColor(), level, Log.isMutedModule(name), Log.levels.length > 0 ? Log.fixedWidth : undefined, _console);
+            i = new logger_1.Logger(name, Log.getRandomColor(), level, Log.isMutedModule(name), Log.levels.length > 0 ? Log.fixedWidth : undefined);
             Log.instances[name] = i;
         }
         else {

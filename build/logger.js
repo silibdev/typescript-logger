@@ -4,13 +4,12 @@ var level_1 = require("./level");
 var display_1 = require("./display");
 var include_1 = require("./include");
 var Logger = (function () {
-    function Logger(name, color, allowed, isMuted, fixedWidth, _console) {
+    function Logger(name, color, allowed, isMuted, fixedWidth) {
         this.name = name;
         this.color = color;
         this.allowed = allowed;
         this.isMuted = isMuted;
         this.fixedWidth = fixedWidth;
-        this._console = _console;
         //possibile livello personalizzato ?
         this._level = undefined;
     }
@@ -60,7 +59,7 @@ var Logger = (function () {
             && !include_1.contain(this.allowed, level))
             return this;
         if (this.allowed.length === 0 || include_1.contain(this.allowed, level)) {
-            display_1.Display.msg(name, data, this.name, this.color, level, this.fixedWidth, this._console);
+            display_1.Display.msg(name, data, this.name, this.color, level, this.fixedWidth);
         }
         return this;
     };

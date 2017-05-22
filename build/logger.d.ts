@@ -5,8 +5,7 @@ export declare class Logger<T> {
     private allowed;
     private isMuted;
     fixedWidth: number;
-    private _console;
-    constructor(name: string, color: string, allowed: Level[], isMuted: boolean, fixedWidth: number, _console: any);
+    constructor(name: string, color: string, allowed: Level[], isMuted: boolean, fixedWidth: number);
     debug(name: string, ...data: any[]): this;
     log(name: string, ...data: any[]): this;
     error(name: string, ...data: any[]): this;

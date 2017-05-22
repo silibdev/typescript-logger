@@ -2,7 +2,7 @@ import { Logger } from "./logger";
 import { Level } from "./level";
 export declare class Log {
     private static instances;
-    static create<TA>(_console: any, name: string, ...level: Level[]): Logger<TA>;
+    static create<TA>(name: string, ...level: Level[]): Logger<TA>;
     private static getRandomColor();
     private static fixedWidth;
     private static levels;
