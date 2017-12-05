@@ -29,6 +29,7 @@ var Display = (function () {
         var a1 = '%c ' + moduleName + '  %c ' + message + ' ';
         var a2 = 'background: ' + moduleColor + ';color:white; border: 1px solid ' + moduleColor + '; ';
         var a3 = 'border: 1px solid ' + color + '; ';
+        params = params[0];
         params.unshift(a3);
         params.unshift(a2);
         params.unshift(a1);
