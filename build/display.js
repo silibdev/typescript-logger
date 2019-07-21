@@ -1,15 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var level_1 = require("./level");
-var log_1 = require("./log");
-var include_1 = require("./include");
+var loggerManager_1 = require("./loggerManager");
 var Display = /** @class */ (function () {
     function Display() {
     }
     Display.msg = function (message, params, moduleName, moduleColor, level, moduleWidth) {
-        if (log_1.Log.isProductionMode())
-            return;
-        if (log_1.Log.getAllowedLevels().length !== 0 && !include_1.contain(log_1.Log.getAllowedLevels(), level))
+        if (loggerManager_1.LoggerManager.isProductionMode() ||
+            !loggerManager_1.LoggerManager.isLevelAllowed(level) ||
+            loggerManager_1.LoggerManager.isMuted(moduleName))
             return;
         var color = 'gray';
         if (level === level_1.Level.INFO)
