@@ -5,4 +5,3 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./loggerManager"));
 __export(require("./level"));
-//# sourceMappingURL=index.js.map

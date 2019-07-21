@@ -2,13 +2,15 @@
   "name": "typescript-logger",
   "version": "2.0.0-beta.2",
   "description": "A simple named logger for typescript",
-  "main": "build/index.js",
+  "main": "index.js",
   "scripts": {
-    "build": "npm run clean && tsc",
-    "build:demo": "browserify build/index.js -s Logger -o release/Logger.js",
+    "build": "npm run clean && npm run create:index-src && tsc",
+    "create:index-src": "barrelsby -D -d src",
+    "build:index": "tsc index.ts",
+    "build:bundle": "browserify build/index.js -s Logger -o release/Logger.js",
     "clean": "rimraf build",
     "serve:demo": "http-server .",
-    "demo": "npm run build:demo && npm run serve:demo",
+    "demo": "npm run build:bundle && npm run serve:demo",
     "start": "npm run build && npm run demo"
   },
   "repository": {

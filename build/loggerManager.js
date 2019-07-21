@@ -112,4 +112,3 @@ var LoggerManager = /** @class */ (function () {
     return LoggerManager;
 }());
 exports.LoggerManager = LoggerManager;
-//# sourceMappingURL=loggerManager.js.map
