@@ -4,8 +4,12 @@
   "description": "A simple named logger for typescript",
   "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "demo": "gulp serve:demo"
+    "build": "npm run clean && tsc",
+    "build:demo": "browserify build/index.js -s Logger -d -o release/Logger.js",
+    "clean": "rimraf build",
+    "serve:demo": "http-server .",
+    "demo": "npm run build:demo && npm run serve:demo",
+    "start": "npm run build && npm run demo"
   },
   "repository": {
     "type": "git",
@@ -23,19 +27,9 @@
   },
   "homepage": "https://github.com/ArturoRis/typescript-logger#readme",
   "devDependencies": {
-    "browserify": "^14.3.0",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-sourcemaps": "^2.6.0",
-    "gulp-typescript": "^3.1.6",
-    "gulp-util": "^3.0.8",
-    "run-sequence": "^1.2.2",
-    "tsify": "^3.0.1",
-    "typescript": "^2.2.2",
-    "vinyl-source-stream": "^1.1.0"
-  },
-  "dependencies": {
-    "gulp-webserver": "^0.9.1"
+    "browserify": "^16.3.0",
+    "http-server": "^0.11.1",
+    "rimraf": "^2.6.3",
+    "typescript": "^3.5.3"
   }
 }
