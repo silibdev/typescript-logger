@@ -5,7 +5,7 @@
   "main": "build/index.js",
   "scripts": {
     "build": "npm run clean && tsc",
-    "build:demo": "browserify build/index.js -s Logger -d -o release/Logger.js",
+    "build:demo": "browserify build/index.js -s Logger -o release/Logger.js",
     "clean": "rimraf build",
     "serve:demo": "http-server .",
     "demo": "npm run build:demo && npm run serve:demo",
