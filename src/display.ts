@@ -1,6 +1,5 @@
 import {Level} from "./level";
-import {Log} from "./log";
-import {contain} from "./include";
+import {LoggerManager} from "./loggerManager";
 
 export class Display {
 
@@ -10,8 +9,10 @@ export class Display {
                moduleColor: string,
                level: Level,
                moduleWidth: number) {
-        if (Log.isProductionMode()) return;
-        if (Log.getAllowedLevels().length !== 0 && !contain(Log.getAllowedLevels(), level)) return;
+        if (LoggerManager.isProductionMode() ||
+            !LoggerManager.isLevelAllowed(level) ||
+            LoggerManager.isMuted(moduleName)
+        ) return;
         let color = 'gray';
         if (level === Level.INFO) color = 'deepskyblue';
         if (level === Level.ERROR) color = 'red';

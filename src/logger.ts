@@ -1,62 +1,36 @@
 import {Level} from "./level";
 import {Display} from "./display";
-import {contain} from "./include";
 
-export class Logger<T> {
+export class Logger {
 
     constructor(private name: string,
                 public color: string,
-                private allowed: Level[],
-                private isMuted: boolean,
-                public fixedWidth: number) {
+                private fixedWidth: number) {
     }
 
-    debug(name: string, ...data: any[]) {
-        return this._logMessage(name, Level.DEBUG, data);
+    debug(message: string, ...data: any[]) {
+        return this._logMessage(message, Level.DEBUG, data);
     }
 
-    log(name: string, ...data: any[]) {
-        return this._logMessage(name, Level.LOG, data);
+    log(message: string, ...data: any[]) {
+        return this._logMessage(message, Level.LOG, data);
     }
 
-    error(name: string, ...data: any[]) {
-        return this._logMessage(name, Level.ERROR, data);
+    error(message: string, ...data: any[]) {
+        return this._logMessage(message, Level.ERROR, data);
     }
 
-    info(name: string, ...data: any[]) {
-        return this._logMessage(name, Level.INFO, data);
+    info(message: string, ...data: any[]) {
+        return this._logMessage(message, Level.INFO, data);
     }
 
-    warn(name: string, ...data: any[]) {
-        return this._logMessage(name, Level.WARN, data);
+    warn(message: string, ...data: any[]) {
+        return this._logMessage(message, Level.WARN, data);
     }
 
-    private _logMessage(name: string, level: Level, ...data: any[]) {
-        if (this.isMuted) return this;
-
-        if (this.allowed.length >= 1 && contain(this.allowed, level)
-            && !contain(this.allowed, level)) return this;
-
-        if (this.allowed.length === 0 || contain(this.allowed, level)) {
-            Display.msg(name, data, this.name, this.color, level, this.fixedWidth);
-        }
+    private _logMessage(message: string, level: Level, ...data: any[]) {
+        Display.msg(message, data, this.name, this.color, level, this.fixedWidth);
         return this;
-    }
-
-    //possibile livello personalizzato ?
-    private _level: Level = undefined;
-
-    private level(l: Level) {
-        this._level = l;
-        return this;
-    }
-
-    public mute() {
-        this.isMuted = true;
-    }
-
-    public unMute() {
-        this.isMuted = false;
     }
 
 }

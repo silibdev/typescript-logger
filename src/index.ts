@@ -1,2 +1,2 @@
-export * from './log';
+export * from './loggerManager';
 export * from './level';
