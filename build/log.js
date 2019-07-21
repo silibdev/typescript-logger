@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var logger_1 = require("./logger");
 var include_1 = require("./include");
-var Log = (function () {
+var Log = /** @class */ (function () {
     function Log() {
     }
     Log.create = function (name) {
@@ -82,13 +82,12 @@ var Log = (function () {
     Log.isProductionMode = function () {
         return !Log.isDevelopmentMode;
     };
+    Log.instances = {};
+    Log.fixedWidth = 0;
+    Log.levels = [];
+    Log.modules = [];
+    Log.isDevelopmentMode = true;
     return Log;
 }());
-Log.instances = {};
-Log.fixedWidth = 0;
-Log.levels = [];
-Log.modules = [];
-Log.isDevelopmentMode = true;
 exports.Log = Log;
-
 //# sourceMappingURL=log.js.map

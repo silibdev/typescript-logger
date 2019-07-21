@@ -8,5 +8,4 @@ var Level;
     Level[Level["WARN"] = 3] = "WARN";
     Level[Level["ERROR"] = 4] = "ERROR";
 })(Level = exports.Level || (exports.Level = {}));
-
 //# sourceMappingURL=level.js.map

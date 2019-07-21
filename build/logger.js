@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var level_1 = require("./level");
 var display_1 = require("./display");
 var include_1 = require("./include");
-var Logger = (function () {
+var Logger = /** @class */ (function () {
     function Logger(name, color, allowed, isMuted, fixedWidth) {
         this.name = name;
         this.color = color;
@@ -76,5 +76,4 @@ var Logger = (function () {
     return Logger;
 }());
 exports.Logger = Logger;
-
 //# sourceMappingURL=logger.js.map

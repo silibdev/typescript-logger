@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var level_1 = require("./level");
 var log_1 = require("./log");
 var include_1 = require("./include");
-var Display = (function () {
+var Display = /** @class */ (function () {
     function Display() {
     }
     Display.msg = function (message, params, moduleName, moduleColor, level, moduleWidth) {
@@ -55,5 +55,4 @@ var Display = (function () {
     return Display;
 }());
 exports.Display = Display;
-
 //# sourceMappingURL=display.js.map

@@ -11,9 +11,9 @@ export declare class Logger<T> {
     error(name: string, ...data: any[]): this;
     info(name: string, ...data: any[]): this;
     warn(name: string, ...data: any[]): this;
-    private _logMessage(name, level, ...data);
+    private _logMessage;
     private _level;
-    private level(l);
+    private level;
     mute(): void;
     unMute(): void;
 }
