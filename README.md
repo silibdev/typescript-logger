@@ -9,7 +9,8 @@ Then use the command `gulp build` in order to create the build.
 
 ### Usage
 ```javascript
-var log = Log.create('Demo Component');
+const loggerManager = require('typescript-logger').LoggerManager
+const log = loggerManager.create('Demo Component');
 log.info('test info');
 log.log('test log');
 log.debug('test debug');
