@@ -1,6 +1,9 @@
 # typescript-logger
 A simple named logger for typescript (based on the idea of ng2-logger)
 
+> **⚠️ Important - Big update coming soon.**
+> Meanwhile refer to [v.1.0.4](https://github.com/ArturoRis/typescript-logger/tree/v1.0.4)
+
 ### Building
 
 Use the command `npm install` to install all the dependecies.
