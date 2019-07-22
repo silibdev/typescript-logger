@@ -28,6 +28,7 @@ export class LoggerManager {
         let i: Logger;
         if (LoggerManager.instances[name] === undefined) {
             if (!LoggerManager.instancesStateMap.hasOwnProperty(name))
+                //TODO save config when creating and add a default mute or unmute on creation
                 LoggerManager.instancesStateMap[name] = false;
             i = new Logger(
                 name,
