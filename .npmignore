@@ -1,4 +1,6 @@
 **/*
 !build/*
+!release/*
+!index.d.ts
 !package.json
 !README.md
