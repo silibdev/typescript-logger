@@ -8,6 +8,7 @@ var LoggerManager = /** @class */ (function () {
         var i;
         if (LoggerManager.instances[name] === undefined) {
             if (!LoggerManager.instancesStateMap.hasOwnProperty(name))
+                //TODO save config when creating and add a default mute or unmute on creation
                 LoggerManager.instancesStateMap[name] = false;
             i = new logger_1.Logger(name, color || LoggerManager.getRandomColor(), LoggerManager.levels.length > 0 ? LoggerManager.fixedWidth : undefined);
             LoggerManager.instances[name] = i;
