@@ -1,19 +1,27 @@
 # typescript-logger
-A simple named logger for typescript (based on the idea of ng2-logger)
+A simple named logger written in typescript that can be used in typescript, javascript and even without any dependency manager.  
+(based on the idea of [ng2-logger](https://www.npmjs.com/package/ng2-logger))
 
 > **⚠️ Important - Big update coming soon.**
 > Meanwhile refer to [v.1.0.4](https://github.com/ArturoRis/typescript-logger/tree/v1.0.4)
 
-### Building
-
-Use the command `npm install` to install all the dependecies.
-
-Then use the command `gulp build` in order to create the build.
-
 ### Usage
+>Check the [docs]
+
+Install it through:
+
+`npm install typescript-logger`  
+or  
+`yarn add typescript-logger`  
+
+Then just import (or require, if you're using javascript) the class `LoggerManager` to start creating and managing your logs.
+
+If you're not using any dependency manager, you can still use this package downloading
+this [bundled version](https://github.com/ArturoRis/typescript-logger/tree/v2.0.0-beta.4/release)
+and just include the script in your html.  
+This will expose globally the variable `Logger` from which you can access the `LoggerManager`.
 ```javascript
-const loggerManager = require('typescript-logger').LoggerManager
-const log = loggerManager.create('Demo Component');
+const log = Logger.LoggerManager.create('Demo Component');
 log.info('test info');
 log.log('test log');
 log.debug('test debug');
@@ -22,9 +30,16 @@ log.error('test error');
 ```
 
 ### Demo
-You can see a really simple demo on how to use it and how you will see the logs using the command `npm run demo`.
+You can see a really simple demo on how to use it running the command  
+`npm run serve:demo`  
+and opening a browser (preferably chrome) at this url http://localhost:8080;
+then you can have a look at the logs in the developer tools' console (by default the debug level is hidden in chrome).  
+This demo uses the logger just including the bundled version.
 
-It will start a server and open the browser with a simple page, inspecting the console you will find the logs.
-If the browser does not open automaticaly go to `http://localhost:8888`.
+### Contributing
 
-In order to stop the server use `Ctrl+c` in the console.
+Use the command `npm install` to install all the dependencies.
+
+Use the command `npm run build` in order to clean, create index files, transpile to javascript and build the bundled version.
+
+Use the command `npm run docs` to build the docs. 
