@@ -6,7 +6,7 @@ A simple named logger written in typescript that can be used in typescript, java
 > Meanwhile refer to [v.1.0.4](https://github.com/ArturoRis/typescript-logger/tree/v1.0.4)
 
 ### Usage
->Check the [docs]
+>Check the [docs](https://arturoris.github.io/typescript-logger/)
 
 Install it through:
 
