@@ -19,5 +19,9 @@
   "exclude": [
     "node_modules",
     "./index.d.ts"
-  ]
+  ],
+  "typedocOptions": {
+    "mode": "file",
+    "exclude": "**/*+(index|.spec|.e2e).ts"
+  }
 }

@@ -12,7 +12,8 @@
     "clean:tsc": "rimraf build",
     "clean:bundle": "rimraf release",
     "serve:demo": "http-server .",
-    "start": "npm run build && npm run serve:demo"
+    "start": "npm run build && npm run serve:demo",
+    "docs": "rimraf docs && typedoc --out docs src "
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,8 @@
     "browserify": "^16.3.0",
     "http-server": "^0.11.1",
     "rimraf": "^2.6.3",
+    "typedoc": "^0.14.2",
+    "typedoc-plugin-markdown": "^2.1.0",
     "typescript": "^3.5.3"
   }
 }
