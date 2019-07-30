@@ -3,21 +3,48 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var level_1 = require("./level");
 var loggerManager_1 = require("./loggerManager");
+/**
+ * **(You should not use this class directly)**
+ *
+ * This is an internal class used to manage the actual logging.
+ *
+ * This simply calls the corresponding *console* method to log in the browser console.
+ */
 var Display = /** @class */ (function () {
     function Display() {
     }
+    /**
+     * Method that acts as a proxy to the *console*
+     * @param message The initial string after the *moduleName*; this will be enclosed in a rectangular border of the corresponding color
+     * @param params Topically the objects to log
+     * @param moduleName The name of the logger
+     * @param moduleColor The color associated to the logger
+     * @param level Type of log (i.e. DEBUG, INFO, etc...)
+     * @param moduleWidth Width of the logger name. If the *moduleName* is less than this spaces will be added as padding.
+     */
     Display.msg = function (message, params, moduleName, moduleColor, level, moduleWidth) {
         if (loggerManager_1.LoggerManager.isProductionMode() ||
             !loggerManager_1.LoggerManager.isLevelAllowed(level) ||
             loggerManager_1.LoggerManager.isMuted(moduleName))
             return;
-        var color = 'gray';
-        if (level === level_1.Level.INFO)
-            color = 'deepskyblue';
-        if (level === level_1.Level.ERROR)
-            color = 'red';
-        if (level === level_1.Level.WARN)
-            color = 'orange';
+        var color;
+        switch (level) {
+            case level_1.Level.DEBUG:
+                color = 'violet';
+                break;
+            case level_1.Level.ERROR:
+                color = 'red';
+                break;
+            case level_1.Level.INFO:
+                color = 'deepskyblue';
+                break;
+            case level_1.Level.LOG:
+                color = 'gray';
+                break;
+            case level_1.Level.WARN:
+                color = 'orange';
+                break;
+        }
         if (moduleWidth) {
             var diff = moduleWidth - moduleName.length;
             if (diff > 0) {
@@ -73,12 +100,30 @@ __export(require("./loggerManager"));
 },{"./display":1,"./level":3,"./logger":4,"./loggerManager":5}],3:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Supported levels of logging. Each one sets a color as border of the message in the log
+ */
 var Level;
 (function (Level) {
+    /**
+     * This gives a blue border to the message
+     */
     Level[Level["INFO"] = 0] = "INFO";
+    /**
+     * This gives a black border to the message
+     */
     Level[Level["LOG"] = 1] = "LOG";
+    /**
+     * This gives a violet border to the message
+     */
     Level[Level["DEBUG"] = 2] = "DEBUG";
+    /**
+     * This gives a orange border to the message
+     */
     Level[Level["WARN"] = 3] = "WARN";
+    /**
+     * This gives a red border to the message
+     */
     Level[Level["ERROR"] = 4] = "ERROR";
 })(Level = exports.Level || (exports.Level = {}));
 
@@ -87,12 +132,29 @@ var Level;
 Object.defineProperty(exports, "__esModule", { value: true });
 var level_1 = require("./level");
 var display_1 = require("./display");
+/**
+ * **(You should not use this class directly)**
+ *
+ * This is the logger created by the *LoggerManager*, it has all the methods to allow different levels of logging.
+ * Every level has a color as border for the message.
+ */
 var Logger = /** @class */ (function () {
+    /**
+     *
+     * @param name Logger name, this is the first information written for each log created
+     * @param color Color of the background for the *name* in the log. This can be any CSS color name or hexadecimal string. You can set the color also after the creation of the logger
+     * @param fixedWidth Width of the logger name part, if passed and the *name* is shorter than padding will be added to reach the width
+     */
     function Logger(name, color, fixedWidth) {
         this.name = name;
         this.color = color;
         this.fixedWidth = fixedWidth;
     }
+    /**
+     * This logs a message and the data with *Level.DEBUG*
+     * @param message A message to print along the logger name
+     * @param data The optional data to log
+     */
     Logger.prototype.debug = function (message) {
         var data = [];
         for (var _i = 1; _i < arguments.length; _i++) {
@@ -100,6 +162,11 @@ var Logger = /** @class */ (function () {
         }
         return this._logMessage(message, level_1.Level.DEBUG, data);
     };
+    /**
+     * This logs a message and the data with *Level.DEBUG*
+     * @param message A message to print along the logger name
+     * @param data The optional data to log
+     */
     Logger.prototype.log = function (message) {
         var data = [];
         for (var _i = 1; _i < arguments.length; _i++) {
@@ -107,6 +174,11 @@ var Logger = /** @class */ (function () {
         }
         return this._logMessage(message, level_1.Level.LOG, data);
     };
+    /**
+     * This logs a message and the data with *Level.ERROR*
+     * @param message A message to print along the logger name
+     * @param data The optional data to log
+     */
     Logger.prototype.error = function (message) {
         var data = [];
         for (var _i = 1; _i < arguments.length; _i++) {
@@ -114,6 +186,11 @@ var Logger = /** @class */ (function () {
         }
         return this._logMessage(message, level_1.Level.ERROR, data);
     };
+    /**
+     * This logs a message and the data with *Level.INFO*
+     * @param message A message to print along the logger name
+     * @param data The optional data to log
+     */
     Logger.prototype.info = function (message) {
         var data = [];
         for (var _i = 1; _i < arguments.length; _i++) {
@@ -121,6 +198,11 @@ var Logger = /** @class */ (function () {
         }
         return this._logMessage(message, level_1.Level.INFO, data);
     };
+    /**
+     * This logs a message and the data with *Level.WARN*
+     * @param message A message to print along the logger name
+     * @param data The optional data to log
+     */
     Logger.prototype.warn = function (message) {
         var data = [];
         for (var _i = 1; _i < arguments.length; _i++) {
@@ -128,6 +210,13 @@ var Logger = /** @class */ (function () {
         }
         return this._logMessage(message, level_1.Level.WARN, data);
     };
+    /**
+     * Internal method that ask to the Display class to handle the log
+     * @param message A message to print along the logger name
+     * @param level Level associated to the log entry
+     * @param data The optional data to log
+     * @private
+     */
     Logger.prototype._logMessage = function (message, level) {
         var data = [];
         for (var _i = 2; _i < arguments.length; _i++) {
@@ -151,6 +240,7 @@ var LoggerManager = /** @class */ (function () {
         var i;
         if (LoggerManager.instances[name] === undefined) {
             if (!LoggerManager.instancesStateMap.hasOwnProperty(name))
+                //TODO save config when creating and add a default mute or unmute on creation
                 LoggerManager.instancesStateMap[name] = false;
             i = new logger_1.Logger(name, color || LoggerManager.getRandomColor(), LoggerManager.levels.length > 0 ? LoggerManager.fixedWidth : undefined);
             LoggerManager.instances[name] = i;
