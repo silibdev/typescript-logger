@@ -17,7 +17,7 @@ or
 Then just import (or require, if you're using javascript) the class `LoggerManager` to start creating and managing your logs.
 
 If you're not using any dependency manager, you can still use this package downloading
-this [bundled version](https://github.com/ArturoRis/typescript-logger/tree/v2.0.0-beta.4/release)
+this [bundled version](https://github.com/ArturoRis/typescript-logger/tree/v2.0.0-beta.5/release)
 and just include the script in your html.  
 This will expose globally the variable `Logger` from which you can access the `LoggerManager`.
 ```javascript
