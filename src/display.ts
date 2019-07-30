@@ -29,10 +29,24 @@ export class Display {
             !LoggerManager.isLevelAllowed(level) ||
             LoggerManager.isMuted(moduleName)
         ) return;
-        let color = 'gray';
-        if (level === Level.INFO) color = 'deepskyblue';
-        if (level === Level.ERROR) color = 'red';
-        if (level === Level.WARN) color = 'orange';
+        let color;
+        switch (level) {
+            case Level.DEBUG:
+                color = 'violet';
+                break;
+            case Level.ERROR:
+                color = 'red';
+                break;
+            case Level.INFO:
+                color = 'deepskyblue';
+                break;
+            case Level.LOG:
+                color = 'gray';
+                break;
+            case Level.WARN:
+                color = 'orange';
+                break;
+        }
 
         if (moduleWidth) {
             const diff = moduleWidth - moduleName.length;
