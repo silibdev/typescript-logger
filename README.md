@@ -2,8 +2,6 @@
 A simple named logger written in typescript that can be used in typescript, javascript and even without any dependency manager.  
 (based on the idea of [ng2-logger](https://www.npmjs.com/package/ng2-logger))
 
-> **⚠️ Important - Big update coming soon.**
-> Meanwhile refer to [v.1.0.4](https://github.com/ArturoRis/typescript-logger/tree/v1.0.4)
 
 ### Usage
 >Check the [docs](https://arturoris.github.io/typescript-logger/)
@@ -17,7 +15,7 @@ or
 Then just import (or require, if you're using javascript) the class `LoggerManager` to start creating and managing your logs.
 
 If you're not using any dependency manager, you can still use this package downloading
-this [bundled version](https://github.com/ArturoRis/typescript-logger/tree/v2.0.0-beta.5/release)
+this [bundled version](https://github.com/ArturoRis/typescript-logger/tree/v2.0.0/release)
 and just include the script in your html.  
 This will expose globally the variable `Logger` from which you can access the `LoggerManager`.
 ```javascript
