@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>typescript-logger</title>
+	<title>typescript-logger - v2.0.0-beta.5</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">typescript-logger</a>
+					<a href="index.html" class="title">typescript-logger - v2.0.0-beta.5</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> typescript-logger</h1>
+			<h1> typescript-logger - v2.0.0-beta.5</h1>
 		</div>
 	</div>
 </header>
@@ -64,13 +64,13 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="typescript-logger">typescript-logger</h1>
+				<a href="#typescript-logger" id="typescript-logger" style="color: inherit; text-decoration: none;">
+					<h1>typescript-logger</h1>
+				</a>
 				<p>A simple named logger written in typescript that can be used in typescript, javascript and even without any dependency manager.<br>(based on the idea of <a href="https://www.npmjs.com/package/ng2-logger">ng2-logger</a>)</p>
-				<blockquote>
-					<p><strong>⚠️ Important - Big update coming soon.</strong>
-					Meanwhile refer to <a href="https://github.com/ArturoRis/typescript-logger/tree/v1.0.4">v.1.0.4</a></p>
-				</blockquote>
-				<h3 id="usage">Usage</h3>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h3>Usage</h3>
+				</a>
 				<blockquote>
 					<p>Check the <a href="https://arturoris.github.io/typescript-logger/">docs</a></p>
 				</blockquote>
@@ -78,7 +78,7 @@
 				<p><code>npm install typescript-logger</code><br>or<br><code>yarn add typescript-logger</code>  </p>
 				<p>Then just import (or require, if you&#39;re using javascript) the class <code>LoggerManager</code> to start creating and managing your logs.</p>
 				<p>If you&#39;re not using any dependency manager, you can still use this package downloading
-					this <a href="https://github.com/ArturoRis/typescript-logger/tree/v2.0.0-beta.5/release">bundled version</a>
+					this <a href="https://github.com/ArturoRis/typescript-logger/tree/v2.0.0/release">bundled version</a>
 				and just include the script in your html.<br>This will expose globally the variable <code>Logger</code> from which you can access the <code>LoggerManager</code>.</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> log = Logger.LoggerManager.create(<span class="hljs-string">'Demo Component'</span>);
 log.info(<span class="hljs-string">'test info'</span>);
@@ -86,10 +86,14 @@ log.log(<span class="hljs-string">'test log'</span>);
 log.debug(<span class="hljs-string">'test debug'</span>);
 log.warn(<span class="hljs-string">'test warning'</span>);
 log.error(<span class="hljs-string">'test error'</span>);</code></pre>
-				<h3 id="demo">Demo</h3>
+				<a href="#demo" id="demo" style="color: inherit; text-decoration: none;">
+					<h3>Demo</h3>
+				</a>
 				<p>You can see a really simple demo on how to use it running the command<br><code>npm run serve:demo</code><br>and opening a browser (preferably chrome) at this url <a href="http://localhost:8080">http://localhost:8080</a>;
 				then you can have a look at the logs in the developer tools&#39; console (by default the debug level is hidden in chrome).<br>This demo uses the logger just including the bundled version.</p>
-				<h3 id="contributing">Contributing</h3>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h3>Contributing</h3>
+				</a>
 				<p>Use the command <code>npm install</code> to install all the dependencies.</p>
 				<p>Use the command <code>npm run build</code> in order to clean, create index files, transpile to javascript and build the bundled version.</p>
 				<p>Use the command <code>npm run docs</code> to build the docs. </p>
@@ -134,6 +138,7 @@ log.error(<span class="hljs-string">'test error'</span>);</code></pre>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
@@ -182,7 +187,7 @@ log.error(<span class="hljs-string">'test error'</span>);</code></pre>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
