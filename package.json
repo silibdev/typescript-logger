@@ -13,7 +13,8 @@
     "clean:bundle": "rimraf release",
     "serve:demo": "http-server .",
     "start": "npm run build && npm run serve:demo",
-    "docs": "rimraf docs && typedoc --out docs src "
+    "docs": "rimraf docs && typedoc --out docs src ",
+    "release": "./release.sh"
   },
   "repository": {
     "type": "git",
