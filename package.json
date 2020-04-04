@@ -32,12 +32,11 @@
   },
   "homepage": "https://github.com/ArturoRis/typescript-logger#readme",
   "devDependencies": {
-    "barrelsby": "^2.1.1",
-    "browserify": "^16.3.0",
-    "http-server": "^0.11.1",
-    "rimraf": "^2.6.3",
-    "typedoc": "^0.15.6",
-    "typedoc-plugin-markdown": "^2.1.0",
-    "typescript": "^3.5.3"
+    "barrelsby": "^2.2.0",
+    "browserify": "^16.5.1",
+    "http-server": "^0.12.1",
+    "rimraf": "^3.0.2",
+    "typedoc": "^0.17.3",
+    "typescript": "^3.8.3"
   }
 }
