@@ -4,7 +4,7 @@ A simple named logger written in typescript that can be used in typescript, java
 
 
 ### Usage
->Check the [docs](https://arturoris.github.io/typescript-logger/)
+>Check the [docs](https://silibdev.github.io/typescript-logger/)
 
 Install it through:
 
@@ -15,7 +15,7 @@ or
 Then just import (or require, if you're using javascript) the class `LoggerManager` to start creating and managing your logs.
 
 If you're not using any dependency manager, you can still use this package downloading
-this [bundled version](https://github.com/ArturoRis/typescript-logger/tree/v2.0.0/release)
+this [bundled version](https://github.com/silibdev/typescript-logger/tree/v2.0.0/release)
 and just include the script in your html.  
 This will expose globally the variable `Logger` from which you can access the `LoggerManager`.
 ```javascript
