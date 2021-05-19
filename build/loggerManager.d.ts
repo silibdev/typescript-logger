@@ -1,11 +1,21 @@
 import { Logger } from "./logger";
 import { Level } from "./level";
 export declare class LoggerManager {
-    private static DEV_MODE;
+    /**
+     * Key used for the local storage settings
+     */
     static STORAGE_KEY: string;
+    /**
+     * Mutes the log when created
+     */
+    static MUTE_ON_CREATE: boolean;
+    /**
+     * Sets a fixed with for the module name. (0 if not set)
+     */
+    static FIXED_WIDTH: number;
+    private static DEV_MODE;
     private static instances;
     private static instancesStateMap;
-    private static fixedWidth;
     private static levels;
     private static initializationBlock;
     static create(name: string, color?: string): Logger;

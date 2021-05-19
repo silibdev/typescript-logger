@@ -90,8 +90,9 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="loggermanager.loggermanager-1.html#dev_mode" class="tsd-kind-icon">DEV_<wbr>MODE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="loggermanager.loggermanager-1.html#fixed_width" class="tsd-kind-icon">FIXED_<wbr>WIDTH</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="loggermanager.loggermanager-1.html#mute_on_create" class="tsd-kind-icon">MUTE_<wbr>ON_<wbr>CREATE</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="loggermanager.loggermanager-1.html#storage_key" class="tsd-kind-icon">STORAGE_<wbr>KEY</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="loggermanager.loggermanager-1.html#fixedwidth" class="tsd-kind-icon">fixed<wbr>Width</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="loggermanager.loggermanager-1.html#initializationblock" class="tsd-kind-icon">initialization<wbr>Block</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="loggermanager.loggermanager-1.html#instances" class="tsd-kind-icon">instances</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="loggermanager.loggermanager-1.html#instancesstatemap" class="tsd-kind-icon">instances<wbr>State<wbr>Map</a></li>
@@ -146,9 +147,39 @@
 					<div class="tsd-signature tsd-kind-icon">DEV_<wbr>MODE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L5">loggerManager.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L18">loggerManager.ts:18</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="fixed_width" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> FIXED_<wbr>WIDTH</h3>
+					<div class="tsd-signature tsd-kind-icon">FIXED_<wbr>WIDTH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L16">loggerManager.ts:16</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Sets a fixed with for the module name. (0 if not set)</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="mute_on_create" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> MUTE_<wbr>ON_<wbr>CREATE</h3>
+					<div class="tsd-signature tsd-kind-icon">MUTE_<wbr>ON_<wbr>CREATE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L12">loggerManager.ts:12</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Mutes the log when created</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
 					<a name="storage_key" class="tsd-anchor"></a>
@@ -156,19 +187,14 @@
 					<div class="tsd-signature tsd-kind-icon">STORAGE_<wbr>KEY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;typescript-logger-state&#x27;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L6">loggerManager.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L8">loggerManager.ts:8</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
-					<a name="fixedwidth" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> fixed<wbr>Width</h3>
-					<div class="tsd-signature tsd-kind-icon">fixed<wbr>Width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L10">loggerManager.ts:10</a></li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Key used for the local storage settings</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
 					<a name="initializationblock" class="tsd-anchor"></a>
@@ -176,7 +202,7 @@
 					<div class="tsd-signature tsd-kind-icon">initialization<wbr>Block<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L13">loggerManager.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L23">loggerManager.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -186,7 +212,7 @@
 					<div class="tsd-signature tsd-kind-icon">instances<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol"> = {}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L8">loggerManager.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L19">loggerManager.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -201,7 +227,7 @@
 					<div class="tsd-signature tsd-kind-icon">instances<wbr>State<wbr>Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol"> = {}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L9">loggerManager.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L20">loggerManager.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -216,7 +242,7 @@
 					<div class="tsd-signature tsd-kind-icon">levels<span class="tsd-signature-symbol">:</span> <a href="../enums/level.level-1.html" class="tsd-signature-type" data-tsd-kind="Enumeration">Level</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L11">loggerManager.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L21">loggerManager.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -233,7 +259,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L27">loggerManager.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L39">loggerManager.ts:39</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -259,7 +285,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L102">loggerManager.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L115">loggerManager.ts:115</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -276,7 +302,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L91">loggerManager.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L104">loggerManager.ts:104</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -299,7 +325,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L87">loggerManager.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L100">loggerManager.ts:100</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -322,7 +348,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L83">loggerManager.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L96">loggerManager.ts:96</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -339,7 +365,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L115">loggerManager.ts:115</a></li>
+									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L131">loggerManager.ts:131</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -356,7 +382,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L57">loggerManager.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L68">loggerManager.ts:68</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -382,7 +408,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L72">loggerManager.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L83">loggerManager.ts:83</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -399,7 +425,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L45">loggerManager.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L56">loggerManager.ts:56</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -422,7 +448,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L50">loggerManager.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L61">loggerManager.ts:61</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -445,7 +471,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L107">loggerManager.ts:107</a></li>
+									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L120">loggerManager.ts:120</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -462,7 +488,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L78">loggerManager.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L89">loggerManager.ts:89</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -479,7 +505,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L95">loggerManager.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L108">loggerManager.ts:108</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>levels<span class="tsd-signature-symbol">: </span><a href="../enums/level.level-1.html" class="tsd-signature-type" data-tsd-kind="Enumeration">Level</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>modulesState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol"> }</span></h4>
@@ -506,7 +532,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L66">loggerManager.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L77">loggerManager.ts:77</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -523,7 +549,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/1f3fcce/src/loggerManager.ts#L62">loggerManager.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/ArturoRis/typescript-logger/blob/de131ba/src/loggerManager.ts#L73">loggerManager.ts:73</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -572,10 +598,13 @@
 								<a href="loggermanager.loggermanager-1.html#dev_mode" class="tsd-kind-icon">DEV_<wbr>MODE</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
-								<a href="loggermanager.loggermanager-1.html#storage_key" class="tsd-kind-icon">STORAGE_<wbr>KEY</a>
+								<a href="loggermanager.loggermanager-1.html#fixed_width" class="tsd-kind-icon">FIXED_<wbr>WIDTH</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
-								<a href="loggermanager.loggermanager-1.html#fixedwidth" class="tsd-kind-icon">fixed<wbr>Width</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="loggermanager.loggermanager-1.html#mute_on_create" class="tsd-kind-icon">MUTE_<wbr>ON_<wbr>CREATE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="loggermanager.loggermanager-1.html#storage_key" class="tsd-kind-icon">STORAGE_<wbr>KEY</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
 								<a href="loggermanager.loggermanager-1.html#initializationblock" class="tsd-kind-icon">initialization<wbr>Block</a>

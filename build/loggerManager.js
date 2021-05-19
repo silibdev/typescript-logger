@@ -6,18 +6,17 @@ var LoggerManager = /** @class */ (function () {
     function LoggerManager() {
     }
     LoggerManager.create = function (name, color) {
-        var i;
+        var logger;
         if (LoggerManager.instances[name] === undefined) {
-            if (!LoggerManager.instancesStateMap.hasOwnProperty(name))
-                //TODO save config when creating and add a default mute or unmute on creation
-                LoggerManager.instancesStateMap[name] = false;
-            i = new logger_1.Logger(name, color || LoggerManager.getRandomColor(), LoggerManager.levels.length > 0 ? LoggerManager.fixedWidth : undefined);
-            LoggerManager.instances[name] = i;
+            logger = new logger_1.Logger(name, color || LoggerManager.getRandomColor(), LoggerManager.FIXED_WIDTH);
+            LoggerManager.instances[name] = logger;
+            LoggerManager.mute(name, LoggerManager.MUTE_ON_CREATE);
+            this.saveState();
         }
         else {
-            i = LoggerManager.instances[name];
+            logger = LoggerManager.instances[name];
         }
-        return i;
+        return logger;
     };
     LoggerManager.onlyLevels = function () {
         var levels = [];
@@ -57,7 +56,9 @@ var LoggerManager = /** @class */ (function () {
     };
     LoggerManager.setProductionMode = function () {
         LoggerManager.DEV_MODE = false;
-        delete window['LoggerManager'];
+        if (window) {
+            delete window['LoggerManager'];
+        }
     };
     LoggerManager.isProductionMode = function () {
         return !LoggerManager.DEV_MODE;
@@ -79,6 +80,9 @@ var LoggerManager = /** @class */ (function () {
         return '#' + Math.floor(Math.random() * 16777215).toString(16);
     };
     LoggerManager.saveState = function () {
+        if (!localStorage) {
+            return;
+        }
         var state = {
             map: LoggerManager.instancesStateMap,
             levels: LoggerManager.levels
@@ -86,6 +90,9 @@ var LoggerManager = /** @class */ (function () {
         localStorage.setItem(LoggerManager.STORAGE_KEY, JSON.stringify(state));
     };
     LoggerManager.loadState = function () {
+        if (!localStorage) {
+            return;
+        }
         var state = localStorage.getItem(LoggerManager.STORAGE_KEY);
         if (state) {
             state = JSON.parse(state);
@@ -93,22 +100,34 @@ var LoggerManager = /** @class */ (function () {
             LoggerManager.levels = state.levels;
         }
     };
-    LoggerManager.DEV_MODE = true;
+    /**
+     * Key used for the local storage settings
+     */
     LoggerManager.STORAGE_KEY = 'typescript-logger-state';
+    /**
+     * Mutes the log when created
+     */
+    LoggerManager.MUTE_ON_CREATE = false;
+    /**
+     * Sets a fixed with for the module name. (0 if not set)
+     */
+    LoggerManager.FIXED_WIDTH = 0;
+    LoggerManager.DEV_MODE = true;
     LoggerManager.instances = {};
     LoggerManager.instancesStateMap = {};
-    LoggerManager.fixedWidth = 0;
     LoggerManager.levels = [];
     LoggerManager.initializationBlock = (function () {
-        window['LoggerManager'] = {
-            onlyLevel: LoggerManager.onlyLevels,
-            onlyModules: LoggerManager.onlyModules,
-            mute: LoggerManager.mute,
-            unmute: LoggerManager.unmute,
-            unMuteAllModules: LoggerManager.unMuteAllModules,
-            muteAllModules: LoggerManager.muteAllModules,
-            showConfig: LoggerManager.showConfig
-        };
+        if (window) {
+            window['LoggerManager'] = {
+                onlyLevel: LoggerManager.onlyLevels,
+                onlyModules: LoggerManager.onlyModules,
+                mute: LoggerManager.mute,
+                unmute: LoggerManager.unmute,
+                unMuteAllModules: LoggerManager.unMuteAllModules,
+                muteAllModules: LoggerManager.muteAllModules,
+                showConfig: LoggerManager.showConfig
+            };
+        }
         LoggerManager.loadState();
     })();
     return LoggerManager;
