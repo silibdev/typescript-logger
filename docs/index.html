@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>typescript-logger</title>
+	<meta name="description" content="Documentation for typescript-logger">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">typescript-logger</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>typescript-logger</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#typescript-logger" id="typescript-logger" style="color: inherit; text-decoration: none;">
+					<h1>typescript-logger</h1>
+				</a>
+				<p>A simple named logger written in typescript that can be used in typescript, javascript and even without any dependency manager.<br>(based on the idea of <a href="https://www.npmjs.com/package/ng2-logger">ng2-logger</a>)</p>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h3>Usage</h3>
+				</a>
+				<blockquote>
+					<p>Check the <a href="https://silibdev.github.io/typescript-logger/">docs</a></p>
+				</blockquote>
+				<p>Install it through:</p>
+				<p><code>npm install typescript-logger</code><br>or<br><code>yarn add typescript-logger</code>  </p>
+				<p>Then just import (or require, if you&#39;re using javascript) the class <code>LoggerManager</code> to start creating and managing your logs.</p>
+				<p>If you&#39;re not using any dependency manager, you can still use this package downloading
+					this <a href="https://github.com/silibdev/typescript-logger/tree/v2.0.0/release">bundled version</a>
+				and just include the script in your html.<br>This will expose globally the variable <code>Logger</code> from which you can access the <code>LoggerManager</code>.</p>
+				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">log</span><span style="color: #000000"> = </span><span style="color: #001080">Logger</span><span style="color: #000000">.</span><span style="color: #001080">LoggerManager</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Demo Component&#039;</span><span style="color: #000000">);</span>
+<span style="color: #001080">log</span><span style="color: #000000">.</span><span style="color: #795E26">info</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;test info&#039;</span><span style="color: #000000">);</span>
+<span style="color: #001080">log</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;test log&#039;</span><span style="color: #000000">);</span>
+<span style="color: #001080">log</span><span style="color: #000000">.</span><span style="color: #795E26">debug</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;test debug&#039;</span><span style="color: #000000">);</span>
+<span style="color: #001080">log</span><span style="color: #000000">.</span><span style="color: #795E26">warn</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;test warning&#039;</span><span style="color: #000000">);</span>
+<span style="color: #001080">log</span><span style="color: #000000">.</span><span style="color: #795E26">error</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;test error&#039;</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#demo" id="demo" style="color: inherit; text-decoration: none;">
+					<h3>Demo</h3>
+				</a>
+				<p>You can see a really simple demo on how to use it running the command<br><code>npm run serve:demo</code><br>and opening a browser (preferably chrome) at this url <a href="http://localhost:8080">http://localhost:8080</a>;
+				then you can have a look at the logs in the developer tools&#39; console (by default the debug level is hidden in chrome).<br>This demo uses the logger just including the bundled version.</p>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h3>Contributing</h3>
+				</a>
+				<p>Use the command <code>npm install</code> to install all the dependencies.</p>
+				<p>Use the command <code>npm run build</code> in order to clean, create index files, transpile to javascript and build the bundled version.</p>
+				<p>Use the command <code>npm run docs</code> to build the docs. </p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/display.html">display</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/level.html">level</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/logger.html">logger</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/loggermanager.html">logger<wbr>Manager</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

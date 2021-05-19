@@ -4,7 +4,7 @@
   "description": "A simple named logger for typescript",
   "main": "build/index.js",
   "scripts": {
-    "build": "npm run clean && npm run create:index-src && npm run build:tsc && npm run build:bundle",
+    "build": "npm run create:index-src && npm run build:tsc && npm run build:bundle",
     "create:index-src": "barrelsby -D -d src",
     "build:tsc": "tsc",
     "build:bundle": "browserify build/index.js -s Logger -o release/Logger.js",
