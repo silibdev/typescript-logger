@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.LoggerManager = void 0;
 var logger_1 = require("./logger");
 var LoggerManager = /** @class */ (function () {
     function LoggerManager() {

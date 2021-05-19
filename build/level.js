@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Level = void 0;
 /**
  * Supported levels of logging. Each one sets a color as border of the message in the log
  */

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Display = void 0;
 var level_1 = require("./level");
 var loggerManager_1 = require("./loggerManager");
 /**
