@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArturoRis/typescript-logger.git"
+    "url": "git+https://github.com/silibdev/typescript-logger.git"
   },
   "keywords": [
     "typescript",
@@ -30,9 +30,9 @@
   "author": "Fabio Siliberto (fabio.siliberto@gmail.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ArturoRis/typescript-logger/issues"
+    "url": "https://github.com/silibdev/typescript-logger/issues"
   },
-  "homepage": "https://github.com/ArturoRis/typescript-logger#readme",
+  "homepage": "https://github.com/silibdev/typescript-logger#readme",
   "devDependencies": {
     "barrelsby": "^2.2.0",
     "browserify": "^17.0.0",

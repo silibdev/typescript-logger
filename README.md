@@ -51,3 +51,7 @@ Use the command `npm run docs` to build the docs.
     - FIXED_WIDTH property
 - **Fixes**
     - Logger now works when used with node
+  
+### 3.0.2
+- **Fixes**
+  - Package.json referencies
