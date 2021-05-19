@@ -21,15 +21,17 @@ export class LoggerManager {
     private static levels: Level[] = [];
 
     private static initializationBlock = (() => {
-        window['LoggerManager'] = {
-            onlyLevel: LoggerManager.onlyLevels,
-            onlyModules: LoggerManager.onlyModules,
-            mute: LoggerManager.mute,
-            unmute: LoggerManager.unmute,
-            unMuteAllModules: LoggerManager.unMuteAllModules,
-            muteAllModules: LoggerManager.muteAllModules,
-            showConfig: LoggerManager.showConfig
-        };
+        if (window) {
+            window['LoggerManager'] = {
+                onlyLevel: LoggerManager.onlyLevels,
+                onlyModules: LoggerManager.onlyModules,
+                mute: LoggerManager.mute,
+                unmute: LoggerManager.unmute,
+                unMuteAllModules: LoggerManager.unMuteAllModules,
+                muteAllModules: LoggerManager.muteAllModules,
+                showConfig: LoggerManager.showConfig
+            };
+        }
 
         LoggerManager.loadState();
     })();
@@ -86,7 +88,9 @@ export class LoggerManager {
 
     static setProductionMode() {
         LoggerManager.DEV_MODE = false;
-        delete window['LoggerManager'];
+        if (window) {
+            delete window['LoggerManager'];
+        }
     }
 
     static isProductionMode(): boolean {
@@ -114,6 +118,9 @@ export class LoggerManager {
     }
 
     private static saveState() {
+        if (!localStorage) {
+            return;
+        }
         const state = {
             map: LoggerManager.instancesStateMap,
             levels: LoggerManager.levels
@@ -122,6 +129,9 @@ export class LoggerManager {
     }
 
     private static loadState() {
+        if (!localStorage) {
+            return;
+        }
         let state: any = localStorage.getItem(LoggerManager.STORAGE_KEY);
         if (state) {
             state = JSON.parse(state);
