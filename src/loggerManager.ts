@@ -2,12 +2,22 @@ import {Logger} from "./logger";
 import {Level} from "./level";
 
 export class LoggerManager {
-    private static DEV_MODE = true;
+    /**
+     * Key used for the local storage settings
+     */
     public static STORAGE_KEY = 'typescript-logger-state';
+    /**
+     * Mutes the log when created
+     */
+    public static MUTE_ON_CREATE = false;
+    /**
+     * Sets a fixed with for the module name. (0 if not set)
+     */
+    public static FIXED_WIDTH = 0;
 
+    private static DEV_MODE = true;
     private static instances = {};
     private static instancesStateMap = {};
-    private static fixedWidth = 0;
     private static levels: Level[] = [];
 
     private static initializationBlock = (() => {
@@ -25,21 +35,20 @@ export class LoggerManager {
     })();
 
     static create(name: string, color?: string): Logger {
-        let i: Logger;
+        let logger: Logger;
         if (LoggerManager.instances[name] === undefined) {
-            if (!LoggerManager.instancesStateMap.hasOwnProperty(name))
-                //TODO save config when creating and add a default mute or unmute on creation
-                LoggerManager.instancesStateMap[name] = false;
-            i = new Logger(
+            logger = new Logger(
                 name,
                 color || LoggerManager.getRandomColor(),
-                LoggerManager.levels.length > 0 ? LoggerManager.fixedWidth : undefined
+                LoggerManager.FIXED_WIDTH
             );
-            LoggerManager.instances[name] = i;
+            LoggerManager.instances[name] = logger;
+            LoggerManager.mute(name, LoggerManager.MUTE_ON_CREATE);
+            this.saveState();
         } else {
-            i = LoggerManager.instances[name];
+            logger = LoggerManager.instances[name];
         }
-        return i;
+        return logger;
     }
 
     static onlyLevels(...levels: Level[]) {
