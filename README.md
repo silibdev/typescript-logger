@@ -41,3 +41,13 @@ Use the command `npm install` to install all the dependencies.
 Use the command `npm run build` in order to clean, create index files, transpile to javascript and build the bundled version.
 
 Use the command `npm run docs` to build the docs. 
+
+# CHANGELOG
+### 3.0.1
+- **BREAKING CHANGES**
+  - dependencies major version updates
+- **Features**
+    - MUTE_ON_CREATION property
+    - FIXED_WIDTH property
+- **Fixes**
+    - Logger now works when used with node
