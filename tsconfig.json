@@ -21,7 +21,8 @@
     "./index.d.ts"
   ],
   "typedocOptions": {
-    "mode": "file",
+    "entryPoints": ["src"],
+    "out": "docs",
     "exclude": "**/*+(index|.spec|.e2e).ts"
   }
 }

@@ -8,12 +8,14 @@
     "create:index-src": "barrelsby -D -d src",
     "build:tsc": "tsc",
     "build:bundle": "browserify build/index.js -s Logger -o release/Logger.js",
+    "build:docs": "typedoc",
     "clean": "npm run clean:tsc && npm run clean:bundle",
     "clean:tsc": "rimraf build",
     "clean:bundle": "rimraf release",
+    "clean:docs": "rimraf docs",
     "serve:demo": "http-server .",
     "start": "npm run build && npm run serve:demo",
-    "docs": "rimraf docs && typedoc --out docs src ",
+    "docs": "npm run clean:docs && npm run build:docs",
     "release": "./release.sh"
   },
   "repository": {
