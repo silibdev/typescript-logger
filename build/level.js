@@ -1,10 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Level = void 0;
 /**
  * Supported levels of logging. Each one sets a color as border of the message in the log
  */
-var Level;
+export var Level;
 (function (Level) {
     /**
      * This gives a blue border to the message
@@ -26,4 +23,4 @@ var Level;
      * This gives a red border to the message
      */
     Level[Level["ERROR"] = 4] = "ERROR";
-})(Level = exports.Level || (exports.Level = {}));
+})(Level || (Level = {}));
