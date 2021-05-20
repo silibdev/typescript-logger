@@ -49,9 +49,11 @@ Use the command `npm run docs` to build the docs.
 - **Features**
     - MUTE_ON_CREATION property
     - FIXED_WIDTH property
-- **Fixes**
-    - Logger now works when used with node
   
 ### 3.0.2
 - **Fixes**
   - Package.json referencies
+
+### 3.0.3
+- **Fixes**
+  - Logger now works when used with node
