@@ -20,8 +20,8 @@ export class LoggerManager {
     private static instancesStateMap = {};
     private static levels: Level[] = [];
 
-    private static initializationBlock = (() => {
-        if (window) {
+    private static initializationBlock = ((() => {
+        if (typeof window !== "undefined") {
             window['LoggerManager'] = {
                 onlyLevel: LoggerManager.onlyLevels,
                 onlyModules: LoggerManager.onlyModules,
@@ -34,7 +34,8 @@ export class LoggerManager {
         }
 
         LoggerManager.loadState();
-    })();
+        return undefined;
+    }) as () => undefined)();
 
     static create(name: string, color?: string): Logger {
         let logger: Logger;
@@ -88,7 +89,7 @@ export class LoggerManager {
 
     static setProductionMode() {
         LoggerManager.DEV_MODE = false;
-        if (window) {
+        if (typeof window !== "undefined") {
             delete window['LoggerManager'];
         }
     }
@@ -129,7 +130,7 @@ export class LoggerManager {
     }
 
     private static loadState() {
-        if (!localStorage) {
+        if (typeof localStorage === "undefined") {
             return;
         }
         let state: any = localStorage.getItem(LoggerManager.STORAGE_KEY);
