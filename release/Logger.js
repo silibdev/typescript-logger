@@ -298,7 +298,7 @@ var LoggerManager = /** @class */ (function () {
     };
     LoggerManager.setProductionMode = function () {
         LoggerManager.DEV_MODE = false;
-        if (window) {
+        if (typeof window !== "undefined") {
             delete window['LoggerManager'];
         }
     };
@@ -332,7 +332,7 @@ var LoggerManager = /** @class */ (function () {
         localStorage.setItem(LoggerManager.STORAGE_KEY, JSON.stringify(state));
     };
     LoggerManager.loadState = function () {
-        if (!localStorage) {
+        if (typeof localStorage === "undefined") {
             return;
         }
         var state = localStorage.getItem(LoggerManager.STORAGE_KEY);
@@ -359,7 +359,7 @@ var LoggerManager = /** @class */ (function () {
     LoggerManager.instancesStateMap = {};
     LoggerManager.levels = [];
     LoggerManager.initializationBlock = (function () {
-        if (window) {
+        if (typeof window !== "undefined") {
             window['LoggerManager'] = {
                 onlyLevel: LoggerManager.onlyLevels,
                 onlyModules: LoggerManager.onlyModules,
@@ -371,6 +371,7 @@ var LoggerManager = /** @class */ (function () {
             };
         }
         LoggerManager.loadState();
+        return undefined;
     })();
     return LoggerManager;
 }());
