@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "module": "es2020",
-    "target": "es6",
+    "module": "esnext",
+    "target": "es2020",
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "rootDir": "./src",
