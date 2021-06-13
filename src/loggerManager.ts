@@ -46,7 +46,7 @@ export class LoggerManager {
                 LoggerManager.FIXED_WIDTH
             );
             LoggerManager.instances[name] = logger;
-            LoggerManager.mute(name, LoggerManager.MUTE_ON_CREATE);
+            LoggerManager.mute(name, LoggerManager.isPresent(name) ? LoggerManager.isMuted(name) : LoggerManager.MUTE_ON_CREATE);
             this.saveState();
         } else {
             logger = LoggerManager.instances[name];
@@ -96,6 +96,10 @@ export class LoggerManager {
 
     static isProductionMode(): boolean {
         return !LoggerManager.DEV_MODE;
+    }
+
+    private static isPresent(moduleName: string) {
+        return LoggerManager.instancesStateMap.hasOwnProperty(moduleName);
     }
 
     static isMuted(moduleName: string) {
