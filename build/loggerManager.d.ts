@@ -27,6 +27,7 @@ export declare class LoggerManager {
     static muteAllModules(): void;
     static setProductionMode(): void;
     static isProductionMode(): boolean;
+    private static isPresent;
     static isMuted(moduleName: string): any;
     static isLevelAllowed(level: Level): boolean;
     static showConfig(): {

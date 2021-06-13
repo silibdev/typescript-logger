@@ -5,7 +5,7 @@ export class LoggerManager {
         if (LoggerManager.instances[name] === undefined) {
             logger = new Logger(name, color || LoggerManager.getRandomColor(), LoggerManager.FIXED_WIDTH);
             LoggerManager.instances[name] = logger;
-            LoggerManager.mute(name, LoggerManager.MUTE_ON_CREATE);
+            LoggerManager.mute(name, LoggerManager.isPresent(name) ? LoggerManager.isMuted(name) : LoggerManager.MUTE_ON_CREATE);
             this.saveState();
         }
         else {
@@ -48,6 +48,9 @@ export class LoggerManager {
     }
     static isProductionMode() {
         return !LoggerManager.DEV_MODE;
+    }
+    static isPresent(moduleName) {
+        return LoggerManager.instancesStateMap.hasOwnProperty(moduleName);
     }
     static isMuted(moduleName) {
         return LoggerManager.instancesStateMap[moduleName];
