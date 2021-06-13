@@ -43,6 +43,13 @@ Use the command `npm run build` in order to clean, create index files, transpile
 Use the command `npm run docs` to build the docs. 
 
 # CHANGELOG
+
+### 5.0.1
+- **BREAKING CHANGES**
+  - Update tslint target (should not introduce problems)
+- **Fixes**
+  - Fix bug with `MUTE_ON_CREATE`: even if the flag is true the unmuted modules will be kept unmuted
+
 ### 3.0.1
 - **BREAKING CHANGES**
   - dependencies major version updates
