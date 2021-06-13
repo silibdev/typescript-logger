@@ -54,7 +54,7 @@ Use the command `npm run docs` to build the docs.
 - **BREAKING CHANGES**
   - dependencies major version updates
 - **Features**
-    - MUTE_ON_CREATION property
+    - MUTE_ON_CREATE property
     - FIXED_WIDTH property
   
 ### 3.0.2
